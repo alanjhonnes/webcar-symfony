@@ -1,0 +1,5 @@
+tads_nexcon_webcar_core:
+    resource: "@TADSNexconWebcarCoreBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
