@@ -5,12 +5,12 @@ namespace TADSNexcon\Webcar\CoreBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Brand
+ * Model
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="TADSNexcon\Webcar\CoreBundle\Entity\BrandRepository")
+ * @ORM\Entity(repositoryClass="TADSNexcon\Webcar\CoreBundle\Entity\ModelRepository")
  */
-class Brand
+class Model
 {
     /**
      * @var integer
@@ -20,7 +20,7 @@ class Brand
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
+    
     /**
      * @var string
      * @ORM\Column(type="string", length=255)
@@ -28,16 +28,25 @@ class Brand
     private $name;
     
     /**
-     *
-     * @var 
-     * @///ORM\ManyToOne(targetEntity="Application\Media\")
+     * @var float
+     * @ORM\Column(type="decimal", precision=2)
      */
-    private $logo;
+    private $price;
+    
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=255)
+     */
+    private $motorization;
     
     
+    private $acessories;
     
+    private $kits;
     
-    
+    private $modelColors;
+
+
     /**
      * Get id
      *
@@ -47,6 +56,5 @@ class Brand
     {
         return $this->id;
     }
-    
     
 }
