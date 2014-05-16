@@ -21,8 +21,16 @@ class Color
      */
     private $id;
     
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=255)
+     */
     private $name;
     
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=6)
+     */
     private $rgb;
 
 
@@ -34,5 +42,55 @@ class Color
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Color
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set rgb
+     *
+     * @param string $rgb
+     * @return Color
+     */
+    public function setRgb($rgb)
+    {
+        $this->rgb = $rgb;
+
+        return $this;
+    }
+
+    /**
+     * Get rgb
+     *
+     * @return string 
+     */
+    public function getRgb()
+    {
+        return $this->rgb;
+    }
+    
+    public function __toString() {
+        return $this->name;
     }
 }

@@ -21,11 +21,15 @@ class Acessory
      */
     private $id;
     
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=255)
+     */
     private $name;
     
     /**
      * @var float
-     * @ORM\Column(type="decimal", precision=2)
+     * @ORM\Column(type="decimal", precision=6, scale=2)
      */
     private $price;
 
@@ -38,5 +42,55 @@ class Acessory
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Acessory
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set price
+     *
+     * @param string $price
+     * @return Acessory
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    /**
+     * Get price
+     *
+     * @return string 
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+    
+    public function __toString() {
+        return $this->name;
     }
 }

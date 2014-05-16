@@ -1,0 +1,54 @@
+services:
+    tads_nexcon_webcar_admin.admin.brand:
+        class: TADSNexcon\Webcar\AdminBundle\Admin\BrandAdmin
+        arguments: [~, TADSNexcon\Webcar\CoreBundle\Entity\Brand, TADSNexconWebcarAdminBundle:BrandAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: Conteúdo, label: Marca}
+
+    tads_nexcon_webcar_admin.admin.vehicle:
+        class: TADSNexcon\Webcar\AdminBundle\Admin\VehicleAdmin
+        arguments: [~, TADSNexcon\Webcar\CoreBundle\Entity\Vehicle, TADSNexconWebcarAdminBundle:VehicleAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: Conteúdo, label: Veículo}
+
+    tads_nexcon_webcar_admin.admin.model:
+        class: TADSNexcon\Webcar\AdminBundle\Admin\ModelAdmin
+        arguments: [~, TADSNexcon\Webcar\CoreBundle\Entity\Model, TADSNexconWebcarAdminBundle:ModelAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: Conteúdo, label: Modelo}
+
+    tads_nexcon_webcar_admin.admin.color:
+        class: TADSNexcon\Webcar\AdminBundle\Admin\ColorAdmin
+        arguments: [~, TADSNexcon\Webcar\CoreBundle\Entity\Color, TADSNexconWebcarAdminBundle:ColorAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: Conteúdo, label: Cor}
+
+    tads_nexcon_webcar_admin.admin.concessionary:
+        class: TADSNexcon\Webcar\AdminBundle\Admin\ConcessionaryAdmin
+        arguments: [~, TADSNexcon\Webcar\CoreBundle\Entity\Concessionary, TADSNexconWebcarAdminBundle:ConcessionaryAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: Conteúdo, label: Concessionária}
+
+    tads_nexcon_webcar_admin.admin.configuration:
+        class: TADSNexcon\Webcar\AdminBundle\Admin\ConfigurationAdmin
+        arguments: [~, TADSNexcon\Webcar\CoreBundle\Entity\Configuration, TADSNexconWebcarAdminBundle:ConfigurationAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: Conteúdo, label: Configuração}
+
+    tads_nexcon_webcar_admin.admin.kit:
+        class: TADSNexcon\Webcar\AdminBundle\Admin\KitAdmin
+        arguments: [~, TADSNexcon\Webcar\CoreBundle\Entity\Kit, TADSNexconWebcarAdminBundle:KitAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: Conteúdo, label: Kit}
+
+    tads_nexcon_webcar_admin.admin.acessory:
+        class: TADSNexcon\Webcar\AdminBundle\Admin\AcessoryAdmin
+        arguments: [~, TADSNexcon\Webcar\CoreBundle\Entity\Acessory, TADSNexconWebcarAdminBundle:AcessoryAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: Conteúdo, label: Acessório}
+
+    tads_nexcon_webcar_admin.admin.lead:
+        class: TADSNexcon\Webcar\AdminBundle\Admin\LeadAdmin
+        arguments: [~, TADSNexcon\Webcar\CoreBundle\Entity\Lead, TADSNexconWebcarAdminBundle:LeadAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: Conteúdo, label: Interessado}

@@ -29,10 +29,16 @@ class Brand
     
     /**
      *
-     * @var 
-     * @///ORM\ManyToOne(targetEntity="Application\Media\")
+     * @var Application\Sonata\MediaBundle\Entity\Media
+     * @ORM\ManyToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media")
      */
     private $logo;
+    
+    /**
+     *
+     * @ORM\OneToMany(targetEntity="Vehicle", mappedBy="brand")
+     */
+    private $vehicles;
     
     
     
@@ -49,4 +55,94 @@ class Brand
     }
     
     
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->vehicles = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Brand
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set logo
+     *
+     * @param \Application\Sonata\MediaBundle\Entity\Media $logo
+     * @return Brand
+     */
+    public function setLogo(\Application\Sonata\MediaBundle\Entity\Media $logo = null)
+    {
+        $this->logo = $logo;
+
+        return $this;
+    }
+
+    /**
+     * Get logo
+     *
+     * @return \Application\Sonata\MediaBundle\Entity\Media 
+     */
+    public function getLogo()
+    {
+        return $this->logo;
+    }
+
+    /**
+     * Add vehicles
+     *
+     * @param \TADSNexcon\Webcar\CoreBundle\Entity\Vehicle $vehicles
+     * @return Brand
+     */
+    public function addVehicle(\TADSNexcon\Webcar\CoreBundle\Entity\Vehicle $vehicles)
+    {
+        $this->vehicles[] = $vehicles;
+
+        return $this;
+    }
+
+    /**
+     * Remove vehicles
+     *
+     * @param \TADSNexcon\Webcar\CoreBundle\Entity\Vehicle $vehicles
+     */
+    public function removeVehicle(\TADSNexcon\Webcar\CoreBundle\Entity\Vehicle $vehicles)
+    {
+        $this->vehicles->removeElement($vehicles);
+    }
+
+    /**
+     * Get vehicles
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getVehicles()
+    {
+        return $this->vehicles;
+    }
+    
+    public function __toString() {
+        return $this->name;
+    }
 }
