@@ -46,10 +46,11 @@ class BrandAdmin extends Admin
     {
         $formMapper
             ->add('name')
-            ->add('logo', 'sonata_media_type', array(
-            'provider' => 'sonata.media.provider.image',
-            'context'  => 'default'
-       ));
+//            ->add('logo', 'sonata_media_type', array(
+//            'provider' => 'sonata.media.provider.image',
+//            'context'  => 'default'
+//       ));
+            ->add('logo', 'sonata_type_model_list');
         
     }
 

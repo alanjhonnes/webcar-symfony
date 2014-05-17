@@ -38,6 +38,9 @@ class AppKernel extends Kernel
             
             
             new TADSNexcon\Webcar\AdminBundle\TADSNexconWebcarAdminBundle(),
+            
+            new Oh\GoogleMapFormTypeBundle\OhGoogleMapFormTypeBundle(),
+            //new Oh\ColorPickerTypeBundle\OhColorPickerTypeBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

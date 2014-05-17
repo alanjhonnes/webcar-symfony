@@ -66,7 +66,7 @@ class Model
     /**
      *
      * @var ModelColor
-     * @ORM\OneToMany(targetEntity="ModelColor", mappedBy="model")
+     * @ORM\OneToMany(targetEntity="ModelColor", mappedBy="model",cascade={"persist"})
      */
     private $modelColors;
     
@@ -280,11 +280,24 @@ class Model
      * @param \TADSNexcon\Webcar\CoreBundle\Entity\ModelColor $modelColors
      * @return Model
      */
-    public function addModelColor(\TADSNexcon\Webcar\CoreBundle\Entity\ModelColor $modelColors)
+    public function addModelColor(\TADSNexcon\Webcar\CoreBundle\Entity\ModelColor $modelColor)
     {
-        $this->modelColors[] = $modelColors;
-
+        $this->modelColors[] = $modelColor;
+        $modelColor->setModel($this);
         return $this;
+    }
+    
+    public function setModelColors($modelColors){
+        if (gettype($modelColors) == "array") {
+            $modelColors = new ArrayCollection($modelColors);
+        }
+
+        foreach($modelColors as $modelColor)
+        {
+            $modelColor->setModel($this);
+        }
+
+        $this->modelColors = $modelColors;
     }
 
     /**
@@ -292,9 +305,10 @@ class Model
      *
      * @param \TADSNexcon\Webcar\CoreBundle\Entity\ModelColor $modelColors
      */
-    public function removeModelColor(\TADSNexcon\Webcar\CoreBundle\Entity\ModelColor $modelColors)
+    public function removeModelColor(\TADSNexcon\Webcar\CoreBundle\Entity\ModelColor $modelColor)
     {
-        $this->modelColors->removeElement($modelColors);
+        $this->modelColors->removeElement($modelColor);
+        $modelColor->setModel(null);
     }
 
     /**

@@ -26,7 +26,6 @@ class ConcessionaryAdmin extends Admin
             ->add('street')
             ->add('neighborhood')
             ->add('site')
-            ->add('geolocation')
         ;
     }
 
@@ -46,7 +45,6 @@ class ConcessionaryAdmin extends Admin
             ->add('street')
             ->add('neighborhood')
             ->add('site')
-            ->add('geolocation')
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'show' => array(),
@@ -72,7 +70,7 @@ class ConcessionaryAdmin extends Admin
             ->add('street')
             ->add('neighborhood')
             ->add('site')
-            ->add('geolocation')
+            ->add('latlng', 'oh_google_maps')
         ;
     }
 
@@ -92,7 +90,6 @@ class ConcessionaryAdmin extends Admin
             ->add('street')
             ->add('neighborhood')
             ->add('site')
-            ->add('geolocation')
         ;
     }
 }

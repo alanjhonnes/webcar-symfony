@@ -3,6 +3,8 @@
 namespace TADSNexcon\Webcar\CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Oh\GoogleMapFormTypeBundle\Validator\Constraints as OhAssert;
 
 /**
  * Concessionary
@@ -75,17 +77,40 @@ class Concessionary
      */
     private $site;
     
-    /**
-     * @var string
-     * @ORM\Column(type="string", length=255)
-     */
-    private $geolocation;
     
     /**
      *
      * @ORM\OneToMany(targetEntity="Configuration", mappedBy="concessionary")
      */
     private $configurations;
+    
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=255)
+     */
+    private $lat;
+    
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=255)
+     */
+    private $lng;
+
+    public function setLatLng($latlng)
+    {
+        $this->setLat($latlng['lat']);
+        $this->setLng($latlng['lng']);
+        return $this;
+    }
+
+    /**
+     * @Assert\NotBlank()
+     * @OhAssert\LatLng()
+     */
+    public function getLatLng()
+    {
+        return array('lat'=>$this->getLat(),'lng'=>$this->getLng());
+    }
     
     
 
@@ -372,5 +397,51 @@ class Concessionary
     
     public function __toString() {
         return $this->name;
+    }
+
+    /**
+     * Set lat
+     *
+     * @param string $lat
+     * @return Concessionary
+     */
+    public function setLat($lat)
+    {
+        $this->lat = $lat;
+
+        return $this;
+    }
+
+    /**
+     * Get lat
+     *
+     * @return string 
+     */
+    public function getLat()
+    {
+        return $this->lat;
+    }
+
+    /**
+     * Set lng
+     *
+     * @param string $lng
+     * @return Concessionary
+     */
+    public function setLng($lng)
+    {
+        $this->lng = $lng;
+
+        return $this;
+    }
+
+    /**
+     * Get lng
+     *
+     * @return string 
+     */
+    public function getLng()
+    {
+        return $this->lng;
     }
 }

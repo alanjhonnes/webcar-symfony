@@ -1,5 +1,5 @@
 {% block sonata_media_type_widget %}
-    <div class="">
+    <div class="col-md-6">
         {% if value is not empty and value.providerReference %}
             <div class="" style="margin-right: 5px">
                 {% thumbnail value, 'admin' with {'class': 'img-thumbnail media-object'} %}
@@ -21,8 +21,9 @@
         {% endif %}
     </div>
 
-    <div class="">
+    <div class="col-md-6">
         {{ 'link_media'|trans({}, 'SonataMediaBundle') }}
         {{ block('form_widget') }}
     </div>
+    <div class="clearfix"></div>
 {% endblock sonata_media_type_widget %}

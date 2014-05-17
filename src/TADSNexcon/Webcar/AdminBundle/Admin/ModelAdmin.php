@@ -53,6 +53,22 @@ class ModelAdmin extends Admin
             ->add('price')
             ->add('motorization')
             ->add('vehicle', 'sonata_type_model_list')
+//            ->add('modelColors', 'sonata_type_collection')
+            ->add('modelColors', 'sonata_type_collection', array(
+                // Prevents the "Delete" option from being displayed
+//                'modifiable'    => true,
+                'by_reference' => false,
+                'type_options' => array('delete' => true)
+                //,'type' => 'sonata_type_model_list'
+            ), array(
+//                'class' => 'TADSNexcon/Webcar/CoreBundle/Entity/ModelColor',
+//                'multiple' => true,
+//                'expanded' => true,
+                'edit' => 'inline',
+                'inline' => 'table',
+                'sortable' => 'position',
+                
+            ))
         ;
     }
 

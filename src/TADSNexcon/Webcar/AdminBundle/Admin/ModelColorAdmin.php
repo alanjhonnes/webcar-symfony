@@ -8,7 +8,7 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 
-class VehicleAdmin extends Admin
+class ModelColorAdmin extends Admin
 {
     /**
      * @param DatagridMapper $datagridMapper
@@ -17,8 +17,7 @@ class VehicleAdmin extends Admin
     {
         $datagridMapper
             ->add('id')
-            ->add('name')
-            ->add('year')
+            ->add('price')
         ;
     }
 
@@ -29,8 +28,7 @@ class VehicleAdmin extends Admin
     {
         $listMapper
             ->add('id')
-            ->add('name')
-            ->add('year')
+            ->add('price')
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'show' => array(),
@@ -47,10 +45,9 @@ class VehicleAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('name')
-            ->add('year')
-            ->add('brand', 'sonata_type_model_list')
-            ->add('mainImage', 'sonata_type_model_list')
+            ->add('price')
+            ->add('color', 'sonata_type_model_list')
+            ->add('image', 'sonata_type_model_list')
         ;
     }
 
@@ -61,8 +58,7 @@ class VehicleAdmin extends Admin
     {
         $showMapper
             ->add('id')
-            ->add('name')
-            ->add('year')
+            ->add('price')
         ;
     }
 }

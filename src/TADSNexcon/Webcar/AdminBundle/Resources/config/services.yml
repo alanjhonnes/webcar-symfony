@@ -52,3 +52,9 @@ services:
         arguments: [~, TADSNexcon\Webcar\CoreBundle\Entity\Lead, TADSNexconWebcarAdminBundle:LeadAdmin]
         tags:
             - {name: sonata.admin, manager_type: orm, group: Conteúdo, label: Interessado}
+
+    tads_nexcon_webcar_admin.admin.model_color:
+        class: TADSNexcon\Webcar\AdminBundle\Admin\ModelColorAdmin
+        arguments: [~, TADSNexcon\Webcar\CoreBundle\Entity\ModelColor, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: Conteúdo, label: Cor do Modelo }

@@ -6,6 +6,20 @@
     "autoload": {
         "psr-0": { "": "src/" }
     },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "version": "master",
+                "name": "tkrotoff/jquery-simplecolorpicker",
+                "source": {
+                    "url": "https://github.com/tkrotoff/jquery-simplecolorpicker.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        }
+    ],
     "require": {
         "php": ">=5.3.3",
         "symfony/symfony": "~2.4",
@@ -28,7 +42,8 @@
         "sonata-project/intl-bundle": "~2.1",
         "sonata-project/user-bundle": "~2.2",
         
-        "sonata-project/easy-extends-bundle": "~2.1"
+        "sonata-project/easy-extends-bundle": "~2.1",
+        "oh/google-map-form-type-bundle": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [

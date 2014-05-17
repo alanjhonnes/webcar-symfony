@@ -7,6 +7,7 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
+use Oh\ColorPickerTypeBundle\Form\Type\ColorPickerType;
 
 class ColorAdmin extends Admin
 {
@@ -48,7 +49,8 @@ class ColorAdmin extends Admin
     {
         $formMapper
             ->add('name')
-            ->add('rgb')
+            -add('rgb')
+            //->add('rgb', new ColorPickerType())
         ;
     }
 

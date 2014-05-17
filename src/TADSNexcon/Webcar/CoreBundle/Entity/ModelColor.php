@@ -153,6 +153,6 @@ class ModelColor
     }
     
     public function __toString() {
-        return $this->color;
+        return $this->color->getName();
     }
 }

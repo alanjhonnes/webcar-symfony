@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "82639004f68b8456fc1a69226bc839fc",
+    "hash": "7a987e84324913a5040c4247707d6386",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1823,6 +1823,50 @@
             "time": "2014-05-16 09:33:58"
         },
         {
+            "name": "oh/google-map-form-type-bundle",
+            "version": "dev-master",
+            "target-dir": "Oh/GoogleMapFormTypeBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ollieLtd/OhGoogleMapFormTypeBundle.git",
+                "reference": "b263cee15fac6ecb449d21b118b804925d9fa3ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ollieLtd/OhGoogleMapFormTypeBundle/zipball/b263cee15fac6ecb449d21b118b804925d9fa3ba",
+                "reference": "b263cee15fac6ecb449d21b118b804925d9fa3ba",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": ">=2.1,<2.5-dev"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Oh\\GoogleMapFormTypeBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ollie Harridge",
+                    "email": "code@oll.ie"
+                }
+            ],
+            "description": "Set latitude and longitude values on a form using Google Maps",
+            "homepage": "https://github.com/ollieLtd/OhGoogleMapFormTypeBundle",
+            "keywords": [
+                "form",
+                "google maps",
+                "symfony"
+            ],
+            "time": "2014-01-16 12:00:12"
+        },
+        {
             "name": "phpcollection/phpcollection",
             "version": "0.4.0",
             "source": {
@@ -3597,7 +3641,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "doctrine/data-fixtures": 20,
-        "sonata-project/admin-bundle": 20
+        "sonata-project/admin-bundle": 20,
+        "oh/google-map-form-type-bundle": 20
     },
     "platform": {
         "php": ">=5.3.3"
