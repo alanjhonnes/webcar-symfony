@@ -50,6 +50,10 @@ class VehicleAdmin extends Admin
             ->add('name')
             ->add('year')
             ->add('brand', 'sonata_type_model_list')
+            ->add('mainImage', 'sonata_media_type', array(
+                'provider' => 'sonata.media.provider.image',
+                'context'  => 'default'
+           ))
         ;
     }
 

@@ -30,7 +30,7 @@ class Brand
     /**
      *
      * @var Application\Sonata\MediaBundle\Entity\Media
-     * @ORM\ManyToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media")
+     * @ORM\ManyToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media",cascade={"persist"})
      */
     private $logo;
     

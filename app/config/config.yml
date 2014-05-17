@@ -30,6 +30,10 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    form:
+        resources:
+            # other files
+            - 'ApplicationSonataMediaBundle:Form:media_widgets.html.twig'
 
 # Assetic Configuration
 assetic:

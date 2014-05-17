@@ -13,3 +13,4 @@ parameters:
 
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
+    upload_server_path: /uploads/media
