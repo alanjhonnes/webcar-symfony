@@ -1,3 +1,13 @@
+tads_nexcon_webcar_concessionary:
+    resource: "@TADSNexconWebcarConcessionaryBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+tads_nexcon_webcar_home:
+    resource: "@TADSNexconWebcarHomeBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 tads_nexcon_webcar_admin:
     resource: "@TADSNexconWebcarAdminBundle/Controller/"
     type:     annotation

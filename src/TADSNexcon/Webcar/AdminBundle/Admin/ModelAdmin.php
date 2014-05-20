@@ -31,7 +31,6 @@ class ModelAdmin extends Admin
         $listMapper
             ->add('id')
             ->add('name')
-            ->add('price')
             ->add('motorization')
             ->add('_action', 'actions', array(
                 'actions' => array(
