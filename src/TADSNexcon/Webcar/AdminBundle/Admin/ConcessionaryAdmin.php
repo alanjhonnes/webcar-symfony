@@ -70,6 +70,11 @@ class ConcessionaryAdmin extends Admin
             ->add('street')
             ->add('neighborhood')
             ->add('site')
+            ->add('brands', 'sonata_type_model', array(
+                    'required' => false,
+                    'expanded' => true,
+                    'multiple' => true,
+            ))
             ->add('latlng', 'oh_google_maps')
         ;
     }

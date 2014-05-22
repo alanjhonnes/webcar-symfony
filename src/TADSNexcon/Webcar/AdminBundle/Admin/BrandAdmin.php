@@ -10,6 +10,8 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 class BrandAdmin extends Admin
 {
+    
+    protected $translationDomain = 'messages'; // default is 'messages'
     /**
      * @param DatagridMapper $datagridMapper
      */

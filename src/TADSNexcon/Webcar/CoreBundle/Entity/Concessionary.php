@@ -85,6 +85,12 @@ class Concessionary
     private $configurations;
     
     /**
+     *
+     * @ORM\ManyToMany(targetEntity="Brand")
+     */
+    private $brands;
+    
+    /**
      * @var string
      * @ORM\Column(type="string", length=255)
      */
@@ -443,5 +449,38 @@ class Concessionary
     public function getLng()
     {
         return $this->lng;
+    }
+
+    /**
+     * Add brands
+     *
+     * @param \TADSNexcon\Webcar\CoreBundle\Entity\Brand $brands
+     * @return Concessionary
+     */
+    public function addBrand(\TADSNexcon\Webcar\CoreBundle\Entity\Brand $brands)
+    {
+        $this->brands[] = $brands;
+
+        return $this;
+    }
+
+    /**
+     * Remove brands
+     *
+     * @param \TADSNexcon\Webcar\CoreBundle\Entity\Brand $brands
+     */
+    public function removeBrand(\TADSNexcon\Webcar\CoreBundle\Entity\Brand $brands)
+    {
+        $this->brands->removeElement($brands);
+    }
+
+    /**
+     * Get brands
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getBrands()
+    {
+        return $this->brands;
     }
 }

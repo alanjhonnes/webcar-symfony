@@ -4,6 +4,8 @@ services:
         arguments: [~, TADSNexcon\Webcar\CoreBundle\Entity\Brand, TADSNexconWebcarAdminBundle:BrandAdmin]
         tags:
             - {name: sonata.admin, manager_type: orm, group: Conteúdo, label: Marca}
+        calls:
+            - [setTranslationDomain, [TADSNexconWebcarAdminBundle]]
 
     tads_nexcon_webcar_admin.admin.vehicle:
         class: TADSNexcon\Webcar\AdminBundle\Admin\VehicleAdmin

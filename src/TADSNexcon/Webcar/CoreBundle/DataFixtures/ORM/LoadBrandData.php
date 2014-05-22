@@ -39,8 +39,23 @@ class LoadBrandData extends AbstractFixture implements ContainerAwareInterface, 
     {
         
         $brand = new Brand();
-        $brand->setName("Toyota");
-        $brand->setLogo($this->getReference('toyota-logo'));
+        $brand->setName("Audi");
+        $brand->setLogo($this->getReference('audi-logo'));
+        $manager->persist($brand);
+        
+        $brand = new Brand();
+        $brand->setName("BMW");
+        $brand->setLogo($this->getReference('bmw-logo'));
+        $manager->persist($brand);
+        
+        $brand = new Brand();
+        $brand->setName("Chevrolet");
+        $brand->setLogo($this->getReference('chevrolet-logo'));
+        $manager->persist($brand);
+        
+        $brand = new Brand();
+        $brand->setName("Citroen");
+        $brand->setLogo($this->getReference('citroen-logo'));
         $manager->persist($brand);
         
         $brand = new Brand();
@@ -54,8 +69,18 @@ class LoadBrandData extends AbstractFixture implements ContainerAwareInterface, 
         $manager->persist($brand);
         
         $brand = new Brand();
-        $brand->setName("Volkswagen");
-        $brand->setLogo($this->getReference('volkswagen-logo'));
+        $brand->setName("Honda");
+        $brand->setLogo($this->getReference('honda-logo'));
+        $manager->persist($brand);
+        
+        $brand = new Brand();
+        $brand->setName("Hyundai");
+        $brand->setLogo($this->getReference('hyundai-logo'));
+        $manager->persist($brand);
+        
+        $brand = new Brand();
+        $brand->setName("Kia");
+        $brand->setLogo($this->getReference('kia-logo'));
         $manager->persist($brand);
         
         $brand = new Brand();
@@ -64,24 +89,37 @@ class LoadBrandData extends AbstractFixture implements ContainerAwareInterface, 
         $manager->persist($brand);
         
         $brand = new Brand();
+        $brand->setName("Peugeot");
+        $brand->setLogo($this->getReference('peugeot-logo'));
+        $manager->persist($brand);
+        
+        $brand = new Brand();
         $brand->setName("Renault");
         $brand->setLogo($this->getReference('renault-logo'));
         $manager->persist($brand);
         
         $brand = new Brand();
-        $brand->setName("");
+        $brand->setName("Toyota");
         $brand->setLogo($this->getReference('toyota-logo'));
         $manager->persist($brand);
         
         $brand = new Brand();
-        $brand->setName("Chevrolet");
-        $brand->setLogo($this->getReference('chevrolet-logo'));
+        $brand->setName("Volkswagen");
+        $brand->setLogo($this->getReference('volkswagen-logo'));
         $manager->persist($brand);
         
-        $brand = new Brand();
-        $brand->setName("Pegeout");
-        $brand->setLogo($this->getReference('pegeout-logo'));
-        $manager->persist($brand);
+        
+        
+        
+        
+        
+        
+        
+        
+//        $brand = new Brand();
+//        $brand->setName("Pegeout");
+//        $brand->setLogo($this->getReference('pegeout-logo'));
+//        $manager->persist($brand);
         
         $manager->flush();
     }
