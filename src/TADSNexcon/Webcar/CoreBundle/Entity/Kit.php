@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="TADSNexcon\Webcar\CoreBundle\Entity\KitRepository")
+ * @ORM\HasLifecycleCallbacks
  */
 class Kit
 {
@@ -92,18 +93,18 @@ class Kit
         return $this->basePrice;
     }
 
-    /**
-     * Set calculatedPrice
-     *
-     * @param string $calculatedPrice
-     * @return Kit
-     */
-    public function setCalculatedPrice($calculatedPrice)
-    {
-        $this->calculatedPrice = $calculatedPrice;
-
-        return $this;
-    }
+//    /**
+//     * Set calculatedPrice
+//     *
+//     * @param string $calculatedPrice
+//     * @return Kit
+//     */
+//    public function setCalculatedPrice($calculatedPrice)
+//    {
+//        $this->calculatedPrice = $calculatedPrice;
+//
+//        return $this;
+//    }
 
     /**
      * Get calculatedPrice
@@ -197,4 +198,38 @@ class Kit
     public function __toString() {
         return $this->name;
     }
+    
+     /** @ORM\PrePersist */
+    public function onPrePersist()
+    {
+        $total = 0;
+        $count = 0;
+        foreach ($this->acessories as $acessory) {
+            $total += $acessory->getPrice();
+            $count++;
+        }
+        if($count >= 5){
+            $total *= 0.8;
+        }
+        
+        $this->calculatedPrice = $total + $this->basePrice;   
+                
+    }
+    
+    /** @ORM\PreUpdate */
+    public function onPreUpdate()
+    {
+        $total = 0;
+        $count = 0;
+        foreach ($this->acessories as $acessory) {
+            $total += $acessory->getPrice();
+            $count++;
+        }
+        if($count >= 5){
+            $total *= 0.8;
+        }
+        
+        $this->calculatedPrice = $total + $this->basePrice;  
+    }
+    
 }

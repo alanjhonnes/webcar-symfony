@@ -57,7 +57,7 @@ class LoadMediaData extends AbstractFixture implements ContainerAwareInterface, 
             $media->setEnabled(true);
             $filename = strtolower(substr($file->getFileName(), 0, -4));
             $media->setName($filename);
-            $this->addReference($filename . '-vehicle', $media);
+            $this->addReference($filename . '-vehicle-image', $media);
             $manager->save($media, 'default', 'sonata.media.provider.image');
         }
         
@@ -68,7 +68,7 @@ class LoadMediaData extends AbstractFixture implements ContainerAwareInterface, 
             $media->setEnabled(true);
             $filename = strtolower(substr($file->getFileName(), 0, -4));
             $media->setName($filename);
-            $this->addReference($filename . '-vehicle', $media);
+            $this->addReference($filename . '-model-image', $media);
             $manager->save($media, 'default', 'sonata.media.provider.image');
         }
         
@@ -79,7 +79,7 @@ class LoadMediaData extends AbstractFixture implements ContainerAwareInterface, 
             $media->setEnabled(true);
             $filename = strtolower(substr($file->getFileName(), 0, -4));
             $media->setName($filename);
-            $this->addReference($filename . '-modelcolor', $media);
+            $this->addReference($filename . '-modelcolor-image', $media);
             $manager->save($media, 'default', 'sonata.media.provider.image');
         }
         

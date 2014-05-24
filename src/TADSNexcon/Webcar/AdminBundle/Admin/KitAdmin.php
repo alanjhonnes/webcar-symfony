@@ -18,7 +18,7 @@ class KitAdmin extends Admin
         $datagridMapper
             ->add('id')
             ->add('basePrice')
-            ->add('calculatedPrice')
+            //->add('calculatedPrice')
             ->add('name')
             ->add('description')
         ;
@@ -54,6 +54,11 @@ class KitAdmin extends Admin
             ->add('basePrice')
             ->add('name')
             ->add('description')
+            ->add('acessories', 'sonata_type_model', array(
+                    'required' => false,
+                    'expanded' => false,
+                    'multiple' => true,
+                ))
         ;
     }
 
