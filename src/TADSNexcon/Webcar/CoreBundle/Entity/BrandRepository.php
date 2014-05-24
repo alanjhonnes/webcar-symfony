@@ -12,4 +12,12 @@ use Doctrine\ORM\EntityRepository;
  */
 class BrandRepository extends EntityRepository
 {
+    public function findAllOrderedByName()
+    {
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT b FROM TADSNexconWebcarCoreBundle:Brand b ORDER BY b.name ASC'
+            )
+            ->getResult();
+    }
 }

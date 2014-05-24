@@ -14,8 +14,8 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        
-        
+        $brands = $this->getDoctrine()->getRepository("TADSNexconWebcarCoreBundle:Brand")
+                       ->findAllOrderedByName();
         return array();
     }
 }

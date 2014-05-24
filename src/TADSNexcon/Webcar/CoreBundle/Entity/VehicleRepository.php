@@ -3,6 +3,7 @@
 namespace TADSNexcon\Webcar\CoreBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
+use TADSNexcon\Webcar\CoreBundle\Entity\Brand;
 
 /**
  * VehicleRepository
@@ -12,4 +13,16 @@ use Doctrine\ORM\EntityRepository;
  */
 class VehicleRepository extends EntityRepository
 {
+    public function findVehiclesByBrand(\Brand $brand){
+        
+    }
+    
+    //TODO
+    public function findVehiclesByBrandId($brand){
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT v FROM TADSNexconWebcarCoreBundle:Vehicles v WHERE v.brand  ORDER BY v.name ASC '
+            )
+            ->getResult();
+    }
 }

@@ -224,14 +224,32 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         
         
         $model = new Model();
-        $model->setName("Corolla");
-        $model->setVehicle($this->getReference('Toyota-vehicle'));
+        $model->setName("Corolla Altis");
+        $model->setPrice(80000);
+        $model->setVehicle($this->getReference('Corolla-vehicle'));
+        $model->setMainImage($this->getReference($model->getName() . '-model-image'));
+        $this->setReference($model->getName() . '-model', $model);
+        $manager->persist($model);
+        
+        $model = new Model();
+        $model->setName("Corolla GLi");
+        $model->setPrice(85000);
+        $model->setVehicle($this->getReference('Corolla-vehicle'));
+        $model->setMainImage($this->getReference($model->getName() . '-model-image'));
+        $this->setReference($model->getName() . '-model', $model);
+        $manager->persist($model);
+        
+        $model = new Model();
+        $model->setName("Corolla XEi");
+        $model->setPrice(87000);
+        $model->setVehicle($this->getReference('Corolla-vehicle'));
         $model->setMainImage($this->getReference($model->getName() . '-model-image'));
         $this->setReference($model->getName() . '-model', $model);
         $manager->persist($model);
         
         $model = new Model();
         $model->setName("Hylux");
+        $model->setPrice(60000);
         $model->setVehicle($this->getReference('Toyota-vehicle'));
         $model->setMainImage($this->getReference($model->getName() . '-model-image'));
         $this->setReference($model->getName() . '-model', $model);
