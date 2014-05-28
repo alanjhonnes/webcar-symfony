@@ -12,4 +12,15 @@ use Doctrine\ORM\EntityRepository;
  */
 class ModelRepository extends EntityRepository
 {
+    
+    //TODO
+    public function findComplete($id){
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT m, c,  FROM TADSNexconWebcarCoreBundle:Model v JOIN v.modelColors c, JOIN WHERE v.brand = :brand  ORDER BY v.name ASC '
+            )
+            ->setParameter('brand', $brand)
+            ->getResult();
+    }
+    
 }

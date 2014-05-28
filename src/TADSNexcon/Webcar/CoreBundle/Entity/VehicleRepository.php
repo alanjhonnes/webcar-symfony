@@ -13,16 +13,18 @@ use TADSNexcon\Webcar\CoreBundle\Entity\Brand;
  */
 class VehicleRepository extends EntityRepository
 {
+    
     public function findVehiclesByBrand(\Brand $brand){
-        
+        return $this->findVehiclesByBrandId($brand->getId());
     }
     
     //TODO
     public function findVehiclesByBrandId($brand){
         return $this->getEntityManager()
             ->createQuery(
-                'SELECT v FROM TADSNexconWebcarCoreBundle:Vehicles v WHERE v.brand  ORDER BY v.name ASC '
+                'SELECT v FROM TADSNexconWebcarCoreBundle:Vehicle v WHERE v.brand = :brand  ORDER BY v.name ASC '
             )
+            ->setParameter('brand', $brand)
             ->getResult();
     }
 }
