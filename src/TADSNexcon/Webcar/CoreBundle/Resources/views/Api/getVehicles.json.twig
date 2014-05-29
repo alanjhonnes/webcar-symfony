@@ -1,0 +1,9 @@
+{# empty Twig template #}
+{
+{% for vehicle in vehicles %}
+    vehicle: {
+        name: {{ vehicle.name }}
+        year: {{ vehicle.year|date('Y') }}
+    }
+{% endfor %}
+}

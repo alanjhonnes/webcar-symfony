@@ -41,31 +41,37 @@ class LoadColorData extends AbstractFixture implements ContainerAwareInterface, 
         $color = new Color();
         $color->setName("Preto");
         $color->setRgb("000000");
+        $this->setReference($color->getName() . '-color', $color);
         $manager->persist($color);
         
         $color = new Color();
         $color->setName("Branco");
         $color->setRgb("ffffff");
+        $this->setReference($color->getName() . '-color', $color);
         $manager->persist($color);
         
         $color = new Color();
         $color->setName("Vermelho");
         $color->setRgb("ff0000");
+        $this->setReference($color->getName() . '-color', $color);
         $manager->persist($color);
         
         $color = new Color();
         $color->setName("Azul");
         $color->setRgb("0000ff");
+        $this->setReference($color->getName() . '-color', $color);
         $manager->persist($color);
         
         $color = new Color();
         $color->setName("Verde");
         $color->setRgb("00ff00");
+        $this->setReference($color->getName() . '-color', $color);
         $manager->persist($color);
         
         $color = new Color();
         $color->setName("Cinza");
         $color->setRgb("aaaaaa");
+        $this->setReference($color->getName() . '-color', $color);
         $manager->persist($color);
         
         $manager->flush();

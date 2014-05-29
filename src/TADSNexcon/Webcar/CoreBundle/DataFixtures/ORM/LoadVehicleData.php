@@ -41,91 +41,91 @@ class LoadVehicleData extends AbstractFixture implements ContainerAwareInterface
         $vehicle = new Vehicle();
         $vehicle->setName("A1");
         $vehicle->setBrand($this->getReference('Audi-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
         $vehicle = new Vehicle();
         $vehicle->setName("A3");
         $vehicle->setBrand($this->getReference('Audi-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
         $vehicle = new Vehicle();
         $vehicle->setName("A4");
         $vehicle->setBrand($this->getReference('Audi-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
         $vehicle = new Vehicle();
         $vehicle->setName("Série 1");
         $vehicle->setBrand($this->getReference('BMW-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
         $vehicle = new Vehicle();
         $vehicle->setName("Série 3");
         $vehicle->setBrand($this->getReference('BMW-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
         $vehicle = new Vehicle();
         $vehicle->setName("Celta");
         $vehicle->setBrand($this->getReference('Chevrolet-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
         $vehicle = new Vehicle();
         $vehicle->setName("Camaro");
         $vehicle->setBrand($this->getReference('Chevrolet-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
         $vehicle = new Vehicle();
         $vehicle->setName("C3");
         $vehicle->setBrand($this->getReference('Citroen-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
         $vehicle = new Vehicle();
         $vehicle->setName("C4");
         $vehicle->setBrand($this->getReference('Citroen-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
         $vehicle = new Vehicle();
         $vehicle->setName("Punto");
         $vehicle->setBrand($this->getReference('Fiat-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
         $vehicle = new Vehicle();
         $vehicle->setName("Novo Palio");
         $vehicle->setBrand($this->getReference('Fiat-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
         $vehicle = new Vehicle();
         $vehicle->setName("Focus");
         $vehicle->setBrand($this->getReference('Ford-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
         $vehicle = new Vehicle();
         $vehicle->setName("Fusion");
         $vehicle->setBrand($this->getReference('Ford-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
@@ -133,70 +133,70 @@ class LoadVehicleData extends AbstractFixture implements ContainerAwareInterface
         $vehicle = new Vehicle();
         $vehicle->setName("Fit");
         $vehicle->setBrand($this->getReference('Honda-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
         $vehicle = new Vehicle();
         $vehicle->setName("Civic");
         $vehicle->setBrand($this->getReference('Honda-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
         $vehicle = new Vehicle();
-        $vehicle->setName("Hyndai Carros");
+        $vehicle->setName("Hyundai Carros");
         $vehicle->setBrand($this->getReference('Hyundai-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
         $vehicle = new Vehicle();
-        $vehicle->setName("Hyndai SUV's");
+        $vehicle->setName("Hyundai SUV's");
         $vehicle->setBrand($this->getReference('Hyundai-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
         $vehicle = new Vehicle();
         $vehicle->setName("Picanto");
         $vehicle->setBrand($this->getReference('Kia-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
         $vehicle = new Vehicle();
         $vehicle->setName("Soul");
         $vehicle->setBrand($this->getReference('Kia-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
         $vehicle = new Vehicle();
         $vehicle->setName("Lancer");
         $vehicle->setBrand($this->getReference('Mitsubishi-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
         $vehicle = new Vehicle();
         $vehicle->setName("Mirage");
         $vehicle->setBrand($this->getReference('Mitsubishi-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
         $vehicle = new Vehicle();
         $vehicle->setName("207");
         $vehicle->setBrand($this->getReference('Peugeot-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
         $vehicle = new Vehicle();
         $vehicle->setName("208");
         $vehicle->setBrand($this->getReference('Peugeot-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
@@ -204,14 +204,14 @@ class LoadVehicleData extends AbstractFixture implements ContainerAwareInterface
         $vehicle = new Vehicle();
         $vehicle->setName("Clio");
         $vehicle->setBrand($this->getReference('Renault-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
         $vehicle = new Vehicle();
         $vehicle->setName("Sandero");
         $vehicle->setBrand($this->getReference('Renault-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
@@ -219,35 +219,35 @@ class LoadVehicleData extends AbstractFixture implements ContainerAwareInterface
         $vehicle = new Vehicle();
         $vehicle->setName("Corolla");
         $vehicle->setBrand($this->getReference('Toyota-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
         $vehicle = new Vehicle();
         $vehicle->setName("Hylux");
         $vehicle->setBrand($this->getReference('Toyota-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
         $vehicle = new Vehicle();
         $vehicle->setName("Etios");
         $vehicle->setBrand($this->getReference('Toyota-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
         $vehicle = new Vehicle();
         $vehicle->setName("Gol");
         $vehicle->setBrand($this->getReference('Volkswagen-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         
         $vehicle = new Vehicle();
         $vehicle->setName("Fox");
         $vehicle->setBrand($this->getReference('Volkswagen-brand'));
-        $vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
+        //$vehicle->setMainImage($this->getReference($vehicle->getName() . '-vehicle-image'));
         $this->setReference($vehicle->getName() . '-vehicle', $vehicle);
         $manager->persist($vehicle);
         

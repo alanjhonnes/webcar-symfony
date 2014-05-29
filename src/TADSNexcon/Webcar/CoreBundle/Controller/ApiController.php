@@ -14,12 +14,13 @@ class ApiController extends Controller
     /**
      * @Route("/brand/{id}")
      * @param integer $id
+     * @Template("TADSNexconWebcarCoreBundle:Api:getVehicles.json.twig")
      */
     public function getVehiclesAction($id){
-        $models = $this->getDoctrine()
+        $vehicles = $this->getDoctrine()
                 ->getRepository('TADSNexconWebcarCoreBundle:Vehicle')
                 ->findByBrand($id);
-        return array($models);
+        return array('vehicles' => $vehicles);
     }
     
     

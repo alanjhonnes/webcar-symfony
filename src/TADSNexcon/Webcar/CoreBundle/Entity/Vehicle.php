@@ -69,6 +69,7 @@ class Vehicle
     public function __construct()
     {
         $this->models = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->year = new \DateTime();
     }
 
     /**
