@@ -67,58 +67,12 @@
                 <section id="page-1" class="page container-fluid">
                     <h1>Selecione o fabricante</h1>
                     <div class="row">
-                        <article class="col-lg-4 col-sm-6">
-                            <img class="img-responsive" src="img/logos/audi.png" alt="Audi"/>
-                            <strong>Audi</strong>
+                        {% for brand in brands %}
+                         <article class="col-lg-4 col-sm-6" data-id="{{ brand.id }}">
+                            <img class="img-responsive" src="{% path brand.logo, 'big'  %}" alt="{{ brand.name }}"/>
+                            <strong>{{ brand.name }}</strong>
                         </article>
-                        <article class="col-lg-4 col-sm-6">
-                            <img class="img-responsive"  src="img/logos/toyota.png" alt="Toyota"/>
-                            <strong>Toyota</strong>
-                        </article>
-                        <article class="col-lg-4 col-sm-6">
-                            <img class="img-responsive" src="img/logos/bmw.png" alt="BMW"/>
-                            <strong>BMW</strong>
-                        </article>
-                        <article class="col-lg-4 col-sm-6">
-                            <img class="img-responsive"  src="img/logos/chevrolet.png" alt="Chevrolet"/>
-                            <strong>Chevrolet</strong>
-                        </article>
-                        <article class="col-lg-4 col-sm-6">
-                            <img class="img-responsive"  src="img/logos/citroen.png" alt="Citroen"/>
-                            <strong>Citroen</strong>
-                        </article>
-                        <article class="col-lg-4 col-sm-6">
-                            <img class="img-responsive"  src="img/logos/fiat.png" alt="Fiat"/>
-                            <strong>Fiat</strong>
-                        </article>
-                        <article class="col-lg-4 col-sm-6">
-                            <img class="img-responsive"  src="img/logos/ford.png" alt="Ford"/>
-                            <strong>Ford</strong>
-                        </article>
-                        <article class="col-lg-4 col-sm-6">
-                            <img class="img-responsive"  src="img/logos/honda.png" alt="Honda"/>
-                            <strong>Honda</strong>
-                        </article>
-                        <article class="col-lg-4 col-sm-6">
-                            <img class="img-responsive"  src="img/logos/hyundai.png" alt="Hyundai"/>
-                            <strong>Hyundai</strong>
-                        </article>
-                        <article class="col-lg-4 col-sm-6">
-                            <img class="img-responsive"  src="img/logos/kia.png" alt="Kia"/>
-                            <strong>KIA</strong>
-                        </article>
-                        <article class="col-lg-4 col-sm-6">
-                            <img class="img-responsive"  src="img/logos/mitsubishi.png" alt="Mitsubishi"/>
-                            <strong>Mitsubishi</strong>
-                        </article>
-                        <article class="col-lg-4 col-sm-6">
-                            <img class="img-responsive"  src="img/logos/peugeot.png" alt="Peugeot"/>
-                            <strong>Peugeot</strong>
-                        </article>
-                        <article class="col-lg-4 col-sm-6">
-                            <img class="img-responsive"  src="img/logos/renault.png" alt="Renault"/>
-                            <strong>Renault</strong>
-                        </article>
+                        {% endfor %}
                     </div>
                 </section>
                 <section id="page-2" class="page container-fluid">

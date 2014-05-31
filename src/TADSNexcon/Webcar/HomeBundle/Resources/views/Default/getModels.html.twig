@@ -1,0 +1,11 @@
+                <h1>Selecione o modelo</h1>
+                    <div class="row">
+                        {% for model in models %}
+                        <article class="col-lg-4 col-sm-6">
+                            <img class="img-responsive" src="{% path model.mainImage, 'big' %}" alt="{{ model.name }}"/>
+                            <p>
+                                <strong>{{ model.name }} - {{ model.motorization }}</strong>
+                                <span>R${{ model.price }}</span>
+                            </p>
+                        </article>
+                        {% endfor %}

@@ -1,0 +1,12 @@
+                <h1>Selecione o veículo</h1>
+                    <div class="row">
+                        {% for vehicle in vehicles %}
+                        <article class="col-lg-4 col-sm-6" data-id="{{ vehicle.id }}">
+                            <img class="img-responsive" src="{% path vehicle.mainImage, 'big' %}" alt="{{ vehicle.name }}"/>
+                            <p>
+                                <strong>{{ vehicle.name }}</strong>
+                            </p>
+                        </article>
+                        {% endfor %}
+                    </div>
+                

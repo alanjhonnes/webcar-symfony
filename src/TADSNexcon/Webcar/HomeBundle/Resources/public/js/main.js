@@ -146,27 +146,46 @@ $(document).ready(function() {
         
     }).resize();
     
+    //brands
     $("#page-1 article").click(function(){
+        var brandId = $(this).attr('data-id');
+        $('#page-2').load('brand/' + brandId, function(){
+            nextPage();
+        });
+        
+    });
+    
+    //vehicles
+    $("#page-2").on('click', 'article', function(){
+        var vehicleId = $(this).attr('data-id');
+        $('#page-3').load('vehicle/' + vehicleId, function(){
+            nextPage();
+        });
+        
+    });
+    
+    //models
+    $("#page-3").on('click', 'article', function(){
+//        var jqxhr = $.ajax( "example.php" )
+//        .done(function() {
+//            alert( "success" );
+//        });
         nextPage();
     });
     
-    $("#page-2 article").click(function(){
+    //color
+    $("#page-4").on('click', '#confirm-color', function(){
         nextPage();
     });
     
-    $("#page-3 article").click(function(){
+    //acessories
+    $("#page-5").on('click', '#confirm-acessories',function(){
         nextPage();
     });
     
-    $("#confirm-color").click(function(){
-        nextPage();
-    });
-    $("#confirm-acessories").click(function(){
-        nextPage();
-    });
     
-    $(".acessory-block").click(function(){
-        var $this = $(this);
+    $("#page-5").on('click', '.acessory-block',function(event){
+        var $this = $(event.target).closest('.acessory-block');
         $this.toggleClass("active");
         if($this.hasClass("active")){
             $this.find(".btn-acessory-label").html("Remover");
@@ -180,6 +199,9 @@ $(document).ready(function() {
 //    $(".btn-acessory").click(function(){
 //        $(this).parent().toggleClass("active");
 //    });
+
+    
+    
     
     
 });
