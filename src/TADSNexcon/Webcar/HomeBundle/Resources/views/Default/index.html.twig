@@ -68,7 +68,7 @@
                     <h1>Selecione o fabricante</h1>
                     <div class="row">
                         {% for brand in brands %}
-                         <article class="col-lg-4 col-sm-6" data-id="{{ brand.id }}">
+                         <article class="col-lg-4 col-sm-6" data-id="{{ brand.id }}" data-name="{{ brand.name }}">
                             <img class="img-responsive" src="{% path brand.logo, 'big'  %}" alt="{{ brand.name }}"/>
                             <strong>{{ brand.name }}</strong>
                         </article>
@@ -104,27 +104,7 @@
                 <section id="page-3" class="page container-fluid">
                     <h1>Selecione o modelo</h1>
                     <div class="row">
-                        <article class="col-lg-4 col-sm-6">
-                            <img class="img-responsive" src="img/veiculos/corolla/altis/prata.png" alt="Corolla Altis"/>
-                            <p>
-                                <strong>Corolla Altis</strong>
-                                <span>R$80.000</span>
-                            </p>
-                        </article>
-                        <article class="col-lg-4 col-sm-6">
-                            <img class="img-responsive" src="img/veiculos/corolla/gli/prata.png" alt="Corolla GLi"/>
-                            <p>
-                                <strong>Corolla GLi</strong>
-                                <span>R$85.000</span>
-                            </p>
-                        </article>
-                        <article class="col-lg-4 col-sm-6">
-                            <img class="img-responsive" src="img/veiculos/corolla/xei/prata.png" alt="Corolla XEi"/>
-                            <p>
-                                <strong>Corolla XEi</strong>
-                                <span>R$87.000</span>
-                            </p>
-                        </article>
+                        
                     </div>
                 </section>
                 <section id="page-4" class="page container-fluid">
@@ -248,11 +228,12 @@
                     </div>
                 </section>
                 <section id="page-6" class="page container-fluid">
-                    <h1>Revisão</h1>
-                </section>
-                <section id="page-7" class="page container-fluid">
                     <h1>Selecionar as concessionárias</h1>
                 </section>
+                <section id="page-7" class="page container-fluid">
+                    <h1>Revisão</h1>
+                </section>
+                
             </div>
         </div>
 

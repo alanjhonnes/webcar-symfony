@@ -5,12 +5,13 @@ $(document).ready(function() {
     var $main = $('#pt-main'),
         $pages = $main.children('section.page'),
         $steps = $('nav li'),
+        price = 0;
         //$navIndicator = $("#nav-indicator"),
         $nextButton = $('#next-button'),
         $prevButton = $('#prev-button'),
         pagesCount = $pages.length,
         current = 0,
-        stepsUnlocked = 6,
+        stepsUnlocked = 0,
         isAnimating = false,
         endCurrPage = false,
         endNextPage = false,
@@ -31,7 +32,10 @@ $(document).ready(function() {
     });
 
     $steps.click(function(){
-       gotoPage($(this).index());
+        var index = $(this).index();
+        if(index <= stepsUnlocked){
+            gotoPage($(this).index());
+        }
     });
 
     $steps.eq(current).addClass('active-step');
@@ -106,19 +110,23 @@ $(document).ready(function() {
 
     function nextPage() {
         if (current < pagesCount - 1) {
-            gotoPage(current + 1);
+            stepsUnlocked = current + 1
+            gotoPage(stepsUnlocked);
         }
         else {
             gotoPage(0);
+            stepsUnlocked = 0;
         }
     }
 
     function previousPage() {
         if (current > 0) {
             gotoPage(current - 1);
+            stepsUnlocked = current;
         }
         else {
             gotoPage(pagesCount - 1);
+            stepsUnlocked = pagesCount -1;
         }
     }
 
@@ -148,16 +156,19 @@ $(document).ready(function() {
     
     //brands
     $("#page-1 article").click(function(){
+        
         var brandId = $(this).attr('data-id');
         $('#page-2').load('brand/' + brandId, function(){
             nextPage();
+            
         });
         
     });
     
     //vehicles
-    $("#page-2").on('click', 'article', function(){
-        var vehicleId = $(this).attr('data-id');
+    $("#page-2").on('click', 'article', function(event){
+        $this = $(event.target).closest('.article');
+        var vehicleId = $this.attr('data-id');
         $('#page-3').load('vehicle/' + vehicleId, function(){
             nextPage();
         });
@@ -166,25 +177,33 @@ $(document).ready(function() {
     
     //models
     $("#page-3").on('click', 'article', function(){
+        $this = $(event.target).closest('.article');
+        var modelId = $this.attr('data-id');
+        $.get('model/' + modelId, function( data ){
+            $('#page-4').remove();
+            $('#page-5').remove();
+            $('#page-6').remove();
+            $(data).insertAfter("#page-3");
+            nextPage();
+        });
 //        var jqxhr = $.ajax( "example.php" )
 //        .done(function() {
 //            alert( "success" );
 //        });
-        nextPage();
     });
     
     //color
-    $("#page-4").on('click', '#confirm-color', function(){
+    $("#pt-main").on('click', '#confirm-color', function(){
         nextPage();
     });
     
     //acessories
-    $("#page-5").on('click', '#confirm-acessories',function(){
+    $("#pt-main").on('click', '#confirm-acessories',function(){
         nextPage();
     });
     
     
-    $("#page-5").on('click', '.acessory-block',function(event){
+    $("#pt-main").on('click', '.acessory-block',function(event){
         var $this = $(event.target).closest('.acessory-block');
         $this.toggleClass("active");
         if($this.hasClass("active")){

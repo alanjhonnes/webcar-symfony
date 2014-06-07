@@ -46,31 +46,31 @@ class LoadAcessoryData extends AbstractFixture implements ContainerAwareInterfac
         
         $acessory = new Acessory();
         $acessory->setName("Acessorio 2");
-        $acessory->setPrice(100);
+        $acessory->setPrice(150);
         $this->addReference($acessory->getName() . '-acessory', $acessory);
         $manager->persist($acessory);
         
         $acessory = new Acessory();
         $acessory->setName("Acessorio 3");
-        $acessory->setPrice(100);
+        $acessory->setPrice(200);
         $this->addReference($acessory->getName() . '-acessory', $acessory);
         $manager->persist($acessory);
         
         $acessory = new Acessory();
         $acessory->setName("Acessorio 4");
-        $acessory->setPrice(100);
+        $acessory->setPrice(300);
         $this->addReference($acessory->getName() . '-acessory', $acessory);
         $manager->persist($acessory);
         
         $acessory = new Acessory();
         $acessory->setName("Acessorio 5");
-        $acessory->setPrice(100);
+        $acessory->setPrice(500);
         $this->addReference($acessory->getName() . '-acessory', $acessory);
         $manager->persist($acessory);
         
         $acessory = new Acessory();
         $acessory->setName("Acessorio 6");
-        $acessory->setPrice(100);
+        $acessory->setPrice(50);
         $this->addReference($acessory->getName() . '-acessory', $acessory);
         $manager->persist($acessory);
         

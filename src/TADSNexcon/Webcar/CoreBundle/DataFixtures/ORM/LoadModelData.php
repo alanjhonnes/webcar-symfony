@@ -42,320 +42,376 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model = new Model();
         $model->setName("A1 Sportback");
         $model->setVehicle($this->getReference('A1-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
-        $modelColor = new ModelColor();
-        $modelColor->setColor($this->getReference('Preto-color'));
-        $modelColor->setPrice(0);
-        $modelColor->setModel($model);
-        $model->addModelColor($modelColor);
-        $modelColor = new ModelColor();
-        $modelColor->setColor($this->getReference('Branco-color'));
-        $modelColor->setPrice(0);
-        $modelColor->setModel($model);
-        $model->addModelColor($modelColor);
-        $modelColor = new ModelColor();
-        $modelColor->setColor($this->getReference('Cinza-color'));
-        $modelColor->setPrice(500);
-        $modelColor->setModel($model);
-        $model->addModelColor($modelColor);
+        $this->addModelColors($model, array('Azul', 'Branco', 'Laranja', 'Preto'));
         $manager->persist($model);
         
         $model = new Model();
         $model->setName("A3 Sportback");
         $model->setVehicle($this->getReference('A3-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Azul', 'Prata', 'Preto', 'Vermelho'));
         $manager->persist($model);
         
         $model = new Model();
         $model->setName("A3 Sedan");
         $model->setVehicle($this->getReference('A3-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Azul', 'Prata', 'Preto', 'Vermelho'));
+        $manager->persist($model);
+        
+        $model = new Model();
+        $model->setName("A4 Avant");
+        $model->setVehicle($this->getReference('A4-vehicle'));
+        $this->setReference($model->getName() . '-model', $model);
+        $model->setPrice(30000);
+        $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Prata', 'Preto', 'Vermelho', 'Azul'));
         $manager->persist($model);
         
         $model = new Model();
         $model->setName("A4 Sedan");
         $model->setVehicle($this->getReference('A4-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
-        $manager->persist($model);
-        
-        $model = new Model();
-        $model->setName("Série 1");
-        $model->setVehicle($this->getReference('Série 1-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
-        $this->setReference($model->getName() . '-model', $model);
-        $model->setPrice(30000);
-        $model->setMotorization('2.0 8V');
-        $manager->persist($model);
-        
-        $model = new Model();
-        $model->setName("Série 3");
-        $model->setVehicle($this->getReference('Série 3-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
-        $this->setReference($model->getName() . '-model', $model);
-        $model->setPrice(30000);
-        $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Branco', 'Preto', 'Vermelho'));
         $manager->persist($model);
         
         $model = new Model();
         $model->setName("Celta");
         $model->setVehicle($this->getReference('Celta-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Branco', 'Preto', 'Vermelho', 'Azul'));
         $manager->persist($model);
         
         $model = new Model();
-        $model->setName("Camaro");
+        $model->setName("Camaro SS");
         $model->setVehicle($this->getReference('Camaro-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Branco', 'Amarelo', 'Preto'));
         $manager->persist($model);
         
         $model = new Model();
         $model->setName("C3");
         $model->setVehicle($this->getReference('C3-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Branco', 'Azul', 'Preto', 'Vermelho'));
         $manager->persist($model);
         
         $model = new Model();
         $model->setName("C4");
         $model->setVehicle($this->getReference('C4-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Prata', 'Preto', 'Vermelho'));
         $manager->persist($model);
         
         $model = new Model();
         $model->setName("Punto");
         $model->setVehicle($this->getReference('Punto-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Prata', 'Azul', 'Preto', 'Vermelho'));
         $manager->persist($model);
         
         $model = new Model();
         $model->setName("Novo Palio");
         $model->setVehicle($this->getReference('Novo Palio-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Prata', 'Azul', 'Preto', 'Vermelho'));
         $manager->persist($model);
         
         $model = new Model();
-        $model->setName("Focus");
-        $model->setVehicle($this->getReference('Focus-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
+        $model->setName("Novo Focus");
+        $model->setVehicle($this->getReference('Novo Focus-vehicle'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Prata', 'Azul', 'Preto', 'Vermelho'));
         $manager->persist($model);
         
         $model = new Model();
         $model->setName("Fusion");
         $model->setVehicle($this->getReference('Fusion-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Prata', 'Azul', 'Preto', 'Vermelho'));
         $manager->persist($model);
         
         
         $model = new Model();
         $model->setName("Fit");
         $model->setVehicle($this->getReference('Fit-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Prata', 'Azul', 'Preto', 'Vermelho'));
         $manager->persist($model);
         
         $model = new Model();
-        $model->setName("Civic");
-        $model->setVehicle($this->getReference('Civic-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
+        $model->setName("City");
+        $model->setVehicle($this->getReference('City-vehicle'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Cinza Chumbo','Branco', 'Prata', 'Preto'));
         $manager->persist($model);
         
         $model = new Model();
-        $model->setName("Hyndai Carros");
+        $model->setName("HB20");
         $model->setVehicle($this->getReference('Hyundai Carros-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Prata', 'Azul', 'Preto', 'Vermelho'));
         $manager->persist($model);
         
         $model = new Model();
-        $model->setName("Hyndai SUV's");
-        $model->setVehicle($this->getReference('Hyundai SUV\'s-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
+        $model->setName("HB20S");
+        $model->setVehicle($this->getReference('Hyundai Carros-vehicle'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Prata', 'Azul', 'Preto', 'Branco'));
+        $manager->persist($model);
+        
+        $model = new Model();
+        $model->setName("HB20X");
+        $model->setVehicle($this->getReference('Hyundai Carros-vehicle'));
+        $this->setReference($model->getName() . '-model', $model);
+        $model->setPrice(30000);
+        $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Prata', 'Branco', 'Marrom', 'Vermelho'));
+        $manager->persist($model);
+        
+        $model = new Model();
+        $model->setName("Tucson Flex");
+        $model->setVehicle($this->getReference('Hyundai SUV-vehicle'));
+        $this->setReference($model->getName() . '-model', $model);
+        $model->setPrice(30000);
+        $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Prata'));
         $manager->persist($model);
         
         $model = new Model();
         $model->setName("Picanto");
-        $model->setVehicle($this->getReference('Picanto-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
+        $model->setVehicle($this->getReference('Kia Passeio-vehicle'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Prata', 'Preto', 'Verde', 'Vermelho', 'Amarelo'));
         $manager->persist($model);
         
         $model = new Model();
         $model->setName("Soul");
-        $model->setVehicle($this->getReference('Soul-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
+        $model->setVehicle($this->getReference('Kia Passeio-vehicle'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Prata', 'Cinza', 'Preto', 'Vermelho'));
         $manager->persist($model);
         
         $model = new Model();
-        $model->setName("Lancer");
+        $model->setName("Sportage");
+        $model->setVehicle($this->getReference('Kia SUV-vehicle'));
+        $this->setReference($model->getName() . '-model', $model);
+        $model->setPrice(30000);
+        $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Prata', 'Laranja', 'Preto', 'Vermelho', 'Azul'));
+        $manager->persist($model);
+        
+        $model = new Model();
+        $model->setName("Lancer GT");
         $model->setVehicle($this->getReference('Lancer-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Prata', 'Azul', 'Preto', 'Vermelho'));
         $manager->persist($model);
         
         $model = new Model();
-        $model->setName("Mirage");
-        $model->setVehicle($this->getReference('Mirage-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
+        $model->setName("Lancer MT");
+        $model->setVehicle($this->getReference('Lancer-vehicle'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Prata', 'Branco', 'Preto', 'Vermelho'));
         $manager->persist($model);
         
         $model = new Model();
         $model->setName("207");
         $model->setVehicle($this->getReference('207-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Prata', 'Cinza', 'Preto', 'Vermelho'));
         $manager->persist($model);
         
         
         $model = new Model();
         $model->setName("208");
         $model->setVehicle($this->getReference('208-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Prata', 'Branco', 'Preto', 'Vermelho'));
         $manager->persist($model);
         
         
         $model = new Model();
         $model->setName("Clio");
         $model->setVehicle($this->getReference('Clio-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Branco', 'Prata', 'Preto', 'Vermelho'));
         $manager->persist($model);
         
         $model = new Model();
         $model->setName("Sandero");
         $model->setVehicle($this->getReference('Sandero-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Prata', 'Verde', 'Preto', 'Vermelho'));
         $manager->persist($model);
         
+        $model = new Model();
+        $model->setName("Sandero Stepway");
+        $model->setVehicle($this->getReference('Sandero-vehicle'));
+        $this->setReference($model->getName() . '-model', $model);
+        $model->setPrice(30000);
+        $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Prata', 'Verde', 'Preto', 'Vermelho'));
+        $manager->persist($model);
         
         $model = new Model();
-        $model->setName("Corolla Altis");
-        $model->setPrice(80000);
+        $model->setName("Corolla do Bonini");
+        $model->setPrice(999999);
         $model->setVehicle($this->getReference('Corolla-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Prata'));
         $manager->persist($model);
         
-        $model = new Model();
-        $model->setName("Corolla GLi");
-        $model->setPrice(85000);
-        $model->setVehicle($this->getReference('Corolla-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
-        $this->setReference($model->getName() . '-model', $model);
-        $model->setMotorization('2.0 8V');
-        $manager->persist($model);
+//        $model = new Model();
+//        $model->setName("Corolla Altis");
+//        $model->setPrice(80000);
+//        $model->setVehicle($this->getReference('Corolla-vehicle'));
+//        $this->setReference($model->getName() . '-model', $model);
+//        $model->setMotorization('2.0 8V');
+//        $this->addModelColors($model, array('Prata', 'Verde', 'Preto', 'Vermelho'));
+//        $manager->persist($model);
+//        
+//        $model = new Model();
+//        $model->setName("Corolla GLi");
+//        $model->setPrice(85000);
+//        $model->setVehicle($this->getReference('Corolla-vehicle'));
+//        $this->setReference($model->getName() . '-model', $model);
+//        $model->setMotorization('2.0 8V');
+//        $this->addModelColors($model, array('Prata', 'Verde', 'Preto', 'Vermelho'));
+//        $manager->persist($model);
+//        
+//        $model = new Model();
+//        $model->setName("Corolla XEi");
+//        $model->setPrice(87000);
+//        $model->setVehicle($this->getReference('Corolla-vehicle'));
+//        $this->setReference($model->getName() . '-model', $model);
+//        $model->setMotorization('2.0 8V');
+//        $this->addModelColors($model, array('Prata', 'Verde', 'Preto', 'Vermelho'));
+//        $manager->persist($model);
         
         $model = new Model();
-        $model->setName("Corolla XEi");
-        $model->setPrice(87000);
-        $model->setVehicle($this->getReference('Corolla-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
-        $this->setReference($model->getName() . '-model', $model);
-        $model->setMotorization('2.0 8V');
-        $manager->persist($model);
-        
-        $model = new Model();
-        $model->setName("Hylux");
+        $model->setName("Hilux");
         $model->setPrice(60000);
-        $model->setVehicle($this->getReference('Hylux-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
+        $model->setVehicle($this->getReference('Hilux-vehicle'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Prata', 'Branco', 'Preto Eclipse', 'Preto Safira', 'Cinza Chumbo'));
         $manager->persist($model);
         
         $model = new Model();
-        $model->setName("Etios");
+        $model->setName("Etios Cross");
         $model->setVehicle($this->getReference('Etios-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Prata', 'Amarelo', 'Azul', 'Preto', 'Vermelho'));
+        $manager->persist($model);
+        
+        $model = new Model();
+        $model->setName("Etios Hatch");
+        $model->setVehicle($this->getReference('Etios-vehicle'));
+        $this->setReference($model->getName() . '-model', $model);
+        $model->setPrice(30000);
+        $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Prata', 'Azul', 'Preto', 'Vermelho'));
         $manager->persist($model);
         
         $model = new Model();
         $model->setName("Gol");
         $model->setVehicle($this->getReference('Gol-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Prata', 'Azul', 'Preto', 'Vermelho'));
         $manager->persist($model);
         
         $model = new Model();
         $model->setName("Fox");
         $model->setVehicle($this->getReference('Fox-vehicle'));
-        //$model->setMainImage($this->getReference($model->getName() . '-model-image'));
         $this->setReference($model->getName() . '-model', $model);
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
+        $this->addModelColors($model, array('Prata', 'Azul', 'Preto', 'Vermelho'));
         $manager->persist($model);
         
         
         $manager->flush();
     }
+    
+    public function addModelColors(Model $model, $colors){
+        $mainImage = false;;
+        foreach ($colors as $color) {
+            $modelColor = new ModelColor();
+            $modelColor->setColor($this->getReference($color . '-color'));
+            $modelColor->setPrice(rand(0, 500));
+            $modelColor->setModel($model);
+            $modelColor->setImage($this->getReference($model->getName() . ' - ' . $color . '-model-image'));
+            $model->addModelColor($modelColor);
+            if(!$mainImage){
+                $model->setMainImage($this->getReference($model->getName() . ' - ' . $color . '-model-image'));
+                $mainImage = true;
+            }
+            
+        }
+    }
+    
+    public function addKits(Model $model, $kits = null){
+        
+    }
+    
+    public function addAcessories(Model $model, $acessories = null){
+        
+    }
+    
+    
 }

@@ -44,11 +44,11 @@ class LoadBrandData extends AbstractFixture implements ContainerAwareInterface, 
         $this->setReference($brand->getName() . '-brand', $brand);
         $manager->persist($brand);
         
-        $brand = new Brand();
-        $brand->setName("BMW");
-        $brand->setLogo($this->getReference('bmw-logo'));
-        $this->setReference($brand->getName() . '-brand', $brand);
-        $manager->persist($brand);
+//        $brand = new Brand();
+//        $brand->setName("BMW");
+//        $brand->setLogo($this->getReference('bmw-logo'));
+//        $this->setReference($brand->getName() . '-brand', $brand);
+//        $manager->persist($brand);
         
         $brand = new Brand();
         $brand->setName("Chevrolet");

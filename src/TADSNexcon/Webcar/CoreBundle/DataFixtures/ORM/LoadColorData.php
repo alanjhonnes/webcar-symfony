@@ -74,6 +74,48 @@ class LoadColorData extends AbstractFixture implements ContainerAwareInterface, 
         $this->setReference($color->getName() . '-color', $color);
         $manager->persist($color);
         
+        $color = new Color();
+        $color->setName("Prata");
+        $color->setRgb("cccccc");
+        $this->setReference($color->getName() . '-color', $color);
+        $manager->persist($color);
+        
+        $color = new Color();
+        $color->setName("Laranja");
+        $color->setRgb("ff9000");
+        $this->setReference($color->getName() . '-color', $color);
+        $manager->persist($color);
+        
+        $color = new Color();
+        $color->setName("Amarelo");
+        $color->setRgb("f0ff00");
+        $this->setReference($color->getName() . '-color', $color);
+        $manager->persist($color);
+        
+        $color = new Color();
+        $color->setName("Marrom");
+        $color->setRgb("703700");
+        $this->setReference($color->getName() . '-color', $color);
+        $manager->persist($color);
+        
+        $color = new Color();
+        $color->setName("Cinza Chumbo");
+        $color->setRgb("999999");
+        $this->setReference($color->getName() . '-color', $color);
+        $manager->persist($color);
+        
+        $color = new Color();
+        $color->setName("Preto Eclipse");
+        $color->setRgb("111111");
+        $this->setReference($color->getName() . '-color', $color);
+        $manager->persist($color);
+        
+        $color = new Color();
+        $color->setName("Preto Safira");
+        $color->setRgb("222222");
+        $this->setReference($color->getName() . '-color', $color);
+        $manager->persist($color);
+        
         $manager->flush();
     }
 }

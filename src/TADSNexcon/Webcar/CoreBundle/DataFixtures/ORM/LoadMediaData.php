@@ -55,7 +55,7 @@ class LoadMediaData extends AbstractFixture implements ContainerAwareInterface, 
             $media = $manager->create();
             $media->setBinaryContent($file);
             $media->setEnabled(true);
-            $filename = strtolower(substr($file->getFileName(), 0, -4));
+            $filename = substr($file->getFileName(), 0, -4);
             $media->setName($filename);
             $this->addReference($filename . '-vehicle-image', $media);
             $manager->save($media, 'default', 'sonata.media.provider.image');
@@ -66,20 +66,9 @@ class LoadMediaData extends AbstractFixture implements ContainerAwareInterface, 
             $media = $manager->create();
             $media->setBinaryContent($file);
             $media->setEnabled(true);
-            $filename = strtolower(substr($file->getFileName(), 0, -4));
+            $filename = substr($file->getFileName(), 0, -4);
             $media->setName($filename);
             $this->addReference($filename . '-model-image', $media);
-            $manager->save($media, 'default', 'sonata.media.provider.image');
-        }
-        
-        $modelColors = Finder::create()->name('*')->in(__DIR__.'/../data/modelcolor');
-        foreach ($models as $file) {
-            $media = $manager->create();
-            $media->setBinaryContent($file);
-            $media->setEnabled(true);
-            $filename = strtolower(substr($file->getFileName(), 0, -4));
-            $media->setName($filename);
-            $this->addReference($filename . '-modelcolor-image', $media);
             $manager->save($media, 'default', 'sonata.media.provider.image');
         }
         

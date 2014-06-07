@@ -36,8 +36,8 @@ class Concessionary
     private $cnpj;
     
     /**
-     * @var integer
-     * @ORM\Column(type="integer")
+     * @var string
+     * @ORM\Column(type="string", length=9)
      */
     private $cep;
     
@@ -343,29 +343,6 @@ class Concessionary
     public function getSite()
     {
         return $this->site;
-    }
-
-    /**
-     * Set geolocation
-     *
-     * @param string $geolocation
-     * @return Concessionary
-     */
-    public function setGeolocation($geolocation)
-    {
-        $this->geolocation = $geolocation;
-
-        return $this;
-    }
-
-    /**
-     * Get geolocation
-     *
-     * @return string 
-     */
-    public function getGeolocation()
-    {
-        return $this->geolocation;
     }
 
     /**
