@@ -44,12 +44,12 @@ $(document).ready(function() {
         $page.data('originalClassList', $page.attr('class'));
     });
 
-//    $steps.click(function(){
-//        var index = $(this).index();
-//        if(index <= stepsUnlocked){
-//            gotoPage($(this).index());
-//        }
-//    });
+    $steps.click(function(){
+        var index = $(this).index();
+        if(index <= stepsUnlocked){
+            gotoPage($(this).index());
+        }
+    });
 
     $steps.eq(current).addClass('active-step');
     $pages.eq(current).addClass('page-current');
@@ -258,10 +258,24 @@ $(document).ready(function() {
             nextPage();
         });
         
+        $(".acessory-block").filter(".active").each(function(){
+            var type = $(this).attr("data-type");
+            if(type === "kit"){
+                kitIds.push($(this).attr("data-id"));
+                kitNames.push($(this).attr("data-name"));
+            }
+            else {
+                acessoriesIds.push($(this).attr("data-id"));
+                acessoryNames.push($(this).attr("data-name"));
+            }
+        });
+        
+        
     });
     
     
     $("#confirm-concessionaries").on('click', function(){
+        $("#selected-image").attr("src", colorSrc);
         $("#selected-model").html(modelName);
         $("#selected-color").html(colorName);
         var itens = "";
@@ -343,6 +357,13 @@ $(document).ready(function() {
         success: function(){
             console.log("sucess");
             $("#modal").fadeOut("fast");
+            $.post("configuration", {
+                leadId: $("#register-success").attr("data-id"),
+                modelId: modelId,
+                modelColorId: modelColorId,
+                kits: kitIds,
+                acessories: acessoriesIds
+            });
         }
     }); 
     

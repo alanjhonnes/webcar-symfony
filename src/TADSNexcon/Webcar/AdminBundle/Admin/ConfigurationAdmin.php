@@ -61,6 +61,9 @@ class ConfigurationAdmin extends Admin
             ->add('id')
             ->add('price')
             ->add('date')
+            ->add('model')
+            ->add('modelColor')
+            ->add('lead')
         ;
     }
 }

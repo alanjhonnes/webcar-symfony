@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Configuration
  *
  * @ORM\Table()
+ * @ORM\HasLifecycleCallbacks
  * @ORM\Entity(repositoryClass="TADSNexcon\Webcar\CoreBundle\Entity\ConfigurationRepository")
  */
 class Configuration
@@ -58,7 +59,7 @@ class Configuration
     /**
      *
      * @var Lead
-     * @ORM\ManyToOne(targetEntity="Concessionary", inversedBy="configurations")
+     * @ORM\ManyToOne(targetEntity="Lead", inversedBy="configurations")
      */
     private $lead;
     
@@ -86,6 +87,7 @@ class Configuration
     {
         $this->kits = new \Doctrine\Common\Collections\ArrayCollection();
         $this->acessories = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->date = new \DateTime();
     }
 
     /**
@@ -249,10 +251,10 @@ class Configuration
     /**
      * Set lead
      *
-     * @param \TADSNexcon\Webcar\CoreBundle\Entity\Concessionary $lead
+     * @param \TADSNexcon\Webcar\CoreBundle\Entity\Lead $lead
      * @return Configuration
      */
-    public function setLead(\TADSNexcon\Webcar\CoreBundle\Entity\Concessionary $lead = null)
+    public function setLead(\TADSNexcon\Webcar\CoreBundle\Entity\Lead $lead = null)
     {
         $this->lead = $lead;
 
@@ -262,7 +264,7 @@ class Configuration
     /**
      * Get lead
      *
-     * @return \TADSNexcon\Webcar\CoreBundle\Entity\Concessionary 
+     * @return \TADSNexcon\Webcar\CoreBundle\Entity\Lead 
      */
     public function getLead()
     {
@@ -293,6 +295,58 @@ class Configuration
     }
     
     public function __toString() {
-        return $this->id;
+        return "$this->id";
     }
+    
+    /** @ORM\PrePersist */
+    public function onPrePersist()
+    {
+        $total = 0;
+        
+        $total += $this->getModel()->getPrice();
+        $total += $this->getModelColor()->getPrice();
+        
+        $kitAcessories = array();
+        
+        foreach ($this->getKits() as $kit) {
+            $total += $kit->getCalculatedPrice();
+            foreach ($kit->getAcessories() as $acessory) {
+                $kitAcessories[] = $acessory->getId();
+            }
+        }
+        
+        foreach ($this->getAcessories() as $acessory) {
+            if(!array_key_exists($acessory->getId(), $kitAcessories)){
+                $total += $acessory->getPrice();
+            }
+        }
+        
+        $this->setPrice($total);     
+                
+    }
+    
+    /** @ORM\PreUpdate */
+    public function onPreUpdate()
+    {
+        $total = 0;
+        
+        $kitAcessories = array();
+        
+        foreach ($this->getKits() as $kit) {
+            $total += $kit->getCalculatedPrice();
+            foreach ($kit->getAcessories() as $acessory) {
+                $kitAcessories[] = $acessory->getId();
+            }
+        }
+        
+        foreach ($this->getAcessories() as $acessory) {
+            if(!array_key_exists($acessory->getId(), $kitAcessories)){
+                $total += $acessory->getPrice();
+            }
+        }
+        
+        $this->setPrice($total); 
+    }
+    
+    
 }

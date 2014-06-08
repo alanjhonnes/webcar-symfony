@@ -49,7 +49,7 @@ class ColorAdmin extends Admin
     {
         $formMapper
             ->add('name')
-            -add('rgb')
+            ->add('rgb')
             //->add('rgb', new ColorPickerType())
         ;
     }
