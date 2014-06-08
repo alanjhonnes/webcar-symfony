@@ -22,7 +22,7 @@ class VehicleRepository extends EntityRepository
     public function findVehiclesByBrandId($brand){
         return $this->getEntityManager()
             ->createQuery(
-                'SELECT v FROM TADSNexconWebcarCoreBundle:Vehicle v WHERE v.brand = :brand  ORDER BY v.name ASC '
+                'SELECT v, i FROM TADSNexconWebcarCoreBundle:Vehicle v LEFT JOIN v.mainImage i WHERE v.brand = :brand  ORDER BY v.name ASC '
             )
             ->setParameter('brand', $brand)
             ->getResult();

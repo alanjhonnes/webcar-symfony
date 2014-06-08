@@ -12,4 +12,14 @@ use Doctrine\ORM\EntityRepository;
  */
 class ConcessionaryRepository extends EntityRepository
 {
+    
+    public function findByBrand($id){
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT c, b FROM TADSNexconWebcarCoreBundle:Concessionary c LEFT JOIN c.brands b WHERE b.id = :brandId'
+            )
+            ->setParameter('brandId', $id)
+            ->getResult();
+    }
+    
 }

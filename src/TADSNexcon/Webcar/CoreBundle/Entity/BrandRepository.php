@@ -16,8 +16,9 @@ class BrandRepository extends EntityRepository
     {
         return $this->getEntityManager()
             ->createQuery(
-                'SELECT b FROM TADSNexconWebcarCoreBundle:Brand b ORDER BY b.name ASC'
+                'SELECT b, l FROM TADSNexconWebcarCoreBundle:Brand b LEFT JOIN b.logo l ORDER BY b.name ASC'
             )
             ->getResult();
     }
+    
 }

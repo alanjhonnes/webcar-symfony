@@ -25,6 +25,12 @@ class Lead
      * @var string
      * @ORM\Column(type="string", length=255)
      */
+    private $cpf;
+    
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=255)
+     */
     private $name;
     
     /**
@@ -109,6 +115,29 @@ class Lead
     public function __construct()
     {
         $this->configurations = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Set cpf
+     *
+     * @param string $cpf
+     * @return Lead
+     */
+    public function setCpf($cpf)
+    {
+        $this->cpf = $cpf;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getCpf()
+    {
+        return $this->cpf;
     }
 
     /**

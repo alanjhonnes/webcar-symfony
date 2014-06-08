@@ -78,27 +78,7 @@
                 <section id="page-2" class="page container-fluid">
                     <h1>Selecione o veículo</h1>
                     <div class="row">
-                        <article class="col-lg-4 col-sm-6">
-                            <img class="img-responsive" src="img/veiculos/corolla/altis/prata.png" alt="Corolla Altis"/>
-                            <p>
-                                <strong>Corolla</strong>
-                                <span>A partir de R$80.000</span>
-                            </p>
-                        </article>
-                        <article class="col-lg-4 col-sm-6">
-                            <img class="img-responsive" src="img/veiculos/corolla/altis/prata.png" alt="Corolla Altis"/>
-                            <p>
-                                <strong>Corolla</strong>
-                                <span>A partir de R$80.000</span>
-                            </p>
-                        </article>
-                        <article class="col-lg-4 col-sm-6">
-                            <img class="img-responsive" src="img/veiculos/corolla/altis/prata.png" alt="Corolla Altis"/>
-                            <p>
-                                <strong>Corolla</strong>
-                                <span>A partir de R$80.000</span>
-                            </p>
-                        </article>
+                        
                     </div>
                 </section>
                 <section id="page-3" class="page container-fluid">
@@ -110,7 +90,7 @@
                 <section id="page-4" class="page container-fluid">
                     <h1>Selecione a cor</h1>
                     <div id="colored-car">
-                        <img src="img/veiculos/corolla/xei/prata.png" alt="Corolla XEi"/>
+                        <img src="" alt=""/>
                     </div>
                     <div id="confirm-color" class="pt-touch-button">
                         Confirmar cor
@@ -228,27 +208,98 @@
                     </div>
                 </section>
                 <section id="page-6" class="page container-fluid">
-                    <h1>Selecionar as concessionárias</h1>
+                    <h1>Selecione até 3 concessionárias</h1>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div id="map-canvas"></div>
+                        </div>
+                        <div class="col-md-4">
+                            <div id="concessionary-list">
+                                
+                            </div>
+                            <div id="confirm-concessionaries" class="pt-touch-button">
+                                Confirmar concessionárias
+                            </div>
+                        </div>
+                    </div>
+                    
                 </section>
                 <section id="page-7" class="page container-fluid">
                     <h1>Revisão</h1>
+                    <form action='' method='post'>
+                        <input id='input-model' type='hidden' value='' name='model'/>
+                        <input id='input-model-color' type='hidden' value='' name='modelColor'/>
+                        <input id='input-kits' type='hidden' value='' name='kits'/>
+                        <input id='input-acessories' type='hidden' value='' name='acessories'/>
+                        <input id='input-lead' type='hidden' value='' name='leadId'/>
+                        <img id='selected-image' src='' alt=''/>
+                        <p>Modelo: <span id='selected-model'></span></p>
+                        <p>Cor: <span id='selected-color'></span></p>
+                        <p>
+                            Kits: 
+                            <ul id='selected-kits'></ul>
+                        </p>
+                        <p>
+                            Acessórios:
+                            <ul id='selected-acessories'></ul>
+                        </p>
+                        <p>
+                            Concessionárias:
+                            <ul id='selected-concessionaries'></ul>
+                        </p>
+                        <p>
+                            Preço total: R$<span id='total-price'></span>
+                        </p>
+                    </form>
+                    <button id="btn-register">Cadastrar-se</button>
+                    <p id="modal-response"></p>
                 </section>
                 
+            </div>
+            <div id="modal">
+                <h1>Cadastro</h1>
+                {{ form(form, {'attr': {'id': 'form-register'}}) }}
+                <!--
+                <form role="form" method="post">
+                    <div class="form-group">
+                        <label for="input-nome">Nome</label>
+                        <input type="text" class="form-control" id="input-nome" placeholder="Digite seu nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="input-email">Email</label>
+                        <input type="email" class="form-control" id="input-email" placeholder="Digite seu email">
+                    </div>
+                    <div class="form-group">
+                        <label for="input-empresa">Empresa</label>
+                        <input type="text" class="form-control" id="input-empresa" placeholder="Digite sua empresa">
+                    </div>
+                    <label for="input-mensagem">Mensagem</label>
+                    <textarea id="input-mensagem" class="form-control" rows="3" name="message"></textarea>
+                    
+                    <button type="submit" class="btn btn-default">
+                        <span class="glyphicon glyphicon-envelope"></span> 
+                        Cadastrar
+                    </button>
+                </form>
+                -->
             </div>
         </div>
 
 
-
+        <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFPwEFe37DIHuI4N8Sh-RL0M06GIznZME">
+        </script>
+        
         <script src="{{ asset('bundles/tadsnexconwebcarhome/js/vendor/jquery-1.10.2.min.js') }}"><\/script>
         <script src="{{ asset('bundles/tadsnexconwebcarhome/js/bootstrap.js') }}"></script>
-        <script src="{{ asset('bundles/tadsnexconwebcarhome/js/raphael.js') }}"></script>
+        <script src="{{ asset('bundles/tadsnexconwebcarhome/js/vendor/jquery.form.min.js') }}"></script>
         <script src="{{ asset('bundles/tadsnexconwebcarhome/js/gsap/TweenMax.js') }}"></script>
         <script src="{{ asset('bundles/tadsnexconwebcarhome/js/vendor/jquery.nicescroll.js') }}"></script>
         <script src="{{ asset('bundles/tadsnexconwebcarhome/js/underscore.min.js') }}"></script>
-        <script src="{{ asset('bundles/tadsnexconwebcarhome/js/backbone.js') }}"></script>
-        <script src="{{ asset('bundles/tadsnexconwebcarhome/js/backbone.localStorage.js') }}"></script>
         <script src="{{ asset('bundles/tadsnexconwebcarhome/js/jssor/jssor.sliders.mini.js') }}"></script>
         <script src="{{ asset('bundles/tadsnexconwebcarhome/js/plugins.js') }}"></script>
+        <script src="{{ asset('bundles/tadsnexconwebcarhome/js/gmaps.js') }}"></script>
         <script src="{{ asset('bundles/tadsnexconwebcarhome/js/main.js') }}"></script>
+        
     </body>
 </html>

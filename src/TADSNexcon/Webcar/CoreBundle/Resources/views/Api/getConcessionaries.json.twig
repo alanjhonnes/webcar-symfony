@@ -1,0 +1,21 @@
+{
+    "concessionaries": [
+    {% for concessionary in concessionaries %}
+        {
+            "id": {{ concessionary.id }},
+            "name": "{{ concessionary.name }}",
+            "cnpj": "{{ concessionary.cnpj }}",
+            "cep": "{{ concessionary.cep }}",
+            "city": "{{ concessionary.city }}",
+            "number": {{ concessionary.number }},
+            "uf": "{{ concessionary.uf }}",
+            "street": "{{ concessionary.street }}",
+            "neighborhood": "{{ concessionary.neighborhood }}",
+            "site": "{{ concessionary.site }}",
+            "lat": "{{ concessionary.lat }}",
+            "lng": "{{ concessionary.lng }}"
+        }{% if not loop.last %},{% endif %}
+    {% endfor %}
+    ]
+
+}

@@ -14,13 +14,13 @@ class ModelRepository extends EntityRepository
 {
     
     //TODO
-    public function findComplete($id){
+    public function findComplete($modelId){
         return $this->getEntityManager()
             ->createQuery(
-                'SELECT m, c,  FROM TADSNexconWebcarCoreBundle:Model v JOIN v.modelColors c, JOIN WHERE v.brand = :brand  ORDER BY v.name ASC '
+                'SELECT m, mc, k, a, i, c FROM TADSNexconWebcarCoreBundle:Model m LEFT JOIN m.modelColors mc LEFT JOIN mc.color c LEFT JOIN  m.kits k LEFT JOIN m.acessories a LEFT JOIN m.mainImage i WHERE m.id = :modelId'
             )
-            ->setParameter('brand', $brand)
-            ->getResult();
+            ->setParameter('modelId', $modelId)
+            ->getOneOrNullResult();
     }
     
 }

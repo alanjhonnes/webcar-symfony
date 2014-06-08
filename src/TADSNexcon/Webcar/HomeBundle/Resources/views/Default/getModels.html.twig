@@ -1,8 +1,7 @@
-                <section id="page-3" class="page container-fluid">
-                    <h1>Selecione o modelo</h1>
+                <h1>Selecione o modelo</h1>
                     <div class="row">
                         {% for model in models %}
-                        <article class="col-lg-4 col-sm-6" data-id="{{ model.id }}" data-price="{{ model.price }}">
+                        <article class="col-lg-4 col-sm-6" data-id="{{ model.id }}" data-name="{{ model.name }}" data-price="{{ model.price }}">
                             <img class="img-responsive" src="{% path model.mainImage, 'big' %}" alt="{{ model.name }}"/>
                             <p>
                                 <strong>{{ model.name }} - {{ model.motorization }}</strong>
@@ -11,57 +10,3 @@
                         </article>
                         {% endfor %}
                     </div>
-                </section>
-                <section id="page-4" class="page container-fluid">
-                    <h1>Selecione a cor</h1>
-                    <div id="colored-car">
-                        <img src="{% path model.mainImage, 'big' %}" alt=""/>
-                    </div>
-                    <div id="confirm-color" class="pt-touch-button">
-                        Confirmar cor
-                    </div>
-                    <div class="row">
-                        {% for modelColor in models.colors %}
-                            <article data-price="{{ modelColor.price }}" class="color-block col-lg-4 col-sm-6" style="background-color: #{{ modelColor.color.rgb }}">
-                                <strong>{{ modelColor.color.name }}: + R${{ modelColor.price }}</strong>
-                            </article>
-                        {% endfor %}
-                    </div>
-                </section>
-                <section id="page-5" class="page container-fluid">
-                    <h1>Selecione os kits e acessórios</h1>
-                     <div id="confirm-acessories" class="pt-touch-button">
-                        Confirmar acessórios
-                    </div>
-                    <div class="row">
-                        {% for kit in models.kits %}
-                        <article data-type="kit" data-id="{{ kit.id }}" data-price="{{ kit.calculatedPrice }}" class="acessory-block col-lg-3 col-sm-4 col-xs-6">
-                            <strong>Kit -{{ kit.name }} - R${{ kit.calculatedPrice }}</strong>
-                            <p>
-                                {{ kit.description }}
-                            </p>
-                            {% if kit.acessories is not empty %}
-                                <strong>Inclusos:</strong>
-                                <ul>
-                                {% for acessory in kit.acessories %}
-                                    <li>{{ acessory.name }}</li>
-                                {% endfor %}
-                                </ul>
-                            {% endif %}
-                            <div class="btn-acessory">
-                                <span class="btn-acessory-label">Adicionar</span>
-                            </div>
-                        </article>
-                        {% endfor %}
-                        
-                        {% for acessory in models.acessories %}
-                        <article data-type="acessory" data-id="{{ acessory.id }}" data-price="{{ acessory.price }}" class="acessory-block col-lg-3 col-sm-4 col-xs-6">
-                            <h3>Acessório:</h3>
-                            <strong>{{ acessory.name }} - R${{ acessory.price }}</strong>
-                            <div class="btn-acessory">
-                                <span class="btn-acessory-label">Adicionar</span>
-                            </div>
-                        </article>
-                        {% endfor %}
-                    </div>
-                </section>

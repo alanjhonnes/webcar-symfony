@@ -48,6 +48,16 @@ class ApiController extends Controller
         return array($model);
     }
     
-    
+    /**
+     * @Route("/concessionary/{id}")
+     * @Template("TADSNexconWebcarCoreBundle:Api:getConcessionaries.json.twig")
+     * @param integer $id
+     */
+    public function getConcessionariesAction($id){
+        $concessionary = $this->getDoctrine()
+                ->getRepository('TADSNexconWebcarCoreBundle:Concessionary')
+                ->findByBrand($id);
+        return array('concessionaries' => $concessionary);
+    }
     
 }

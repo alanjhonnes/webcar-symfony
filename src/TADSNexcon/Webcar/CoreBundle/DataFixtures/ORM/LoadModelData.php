@@ -46,6 +46,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Azul', 'Branco', 'Laranja', 'Preto'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -55,6 +57,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Azul', 'Prata', 'Preto', 'Vermelho'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -64,6 +68,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Azul', 'Prata', 'Preto', 'Vermelho'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -73,6 +79,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Prata', 'Preto', 'Vermelho', 'Azul'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -82,6 +90,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Branco', 'Preto', 'Vermelho'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -91,6 +101,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Branco', 'Preto', 'Vermelho', 'Azul'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -100,6 +112,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Branco', 'Amarelo', 'Preto'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -109,6 +123,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Branco', 'Azul', 'Preto', 'Vermelho'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -118,6 +134,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Prata', 'Preto', 'Vermelho'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -127,6 +145,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Prata', 'Azul', 'Preto', 'Vermelho'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -136,6 +156,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Prata', 'Azul', 'Preto', 'Vermelho'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -145,6 +167,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Prata', 'Azul', 'Preto', 'Vermelho'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -154,6 +178,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Prata', 'Azul', 'Preto', 'Vermelho'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         
@@ -164,6 +190,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Prata', 'Azul', 'Preto', 'Vermelho'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -173,6 +201,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Cinza Chumbo','Branco', 'Prata', 'Preto'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -182,6 +212,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Prata', 'Azul', 'Preto', 'Vermelho'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -191,6 +223,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Prata', 'Azul', 'Preto', 'Branco'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -200,6 +234,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Prata', 'Branco', 'Marrom', 'Vermelho'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -209,6 +245,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Prata'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -218,6 +256,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Prata', 'Preto', 'Verde', 'Vermelho', 'Amarelo'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -227,6 +267,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Prata', 'Cinza', 'Preto', 'Vermelho'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -236,6 +278,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Prata', 'Laranja', 'Preto', 'Vermelho', 'Azul'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -245,6 +289,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Prata', 'Azul', 'Preto', 'Vermelho'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -254,6 +300,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Prata', 'Branco', 'Preto', 'Vermelho'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -263,6 +311,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Prata', 'Cinza', 'Preto', 'Vermelho'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         
@@ -273,6 +323,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Prata', 'Branco', 'Preto', 'Vermelho'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         
@@ -283,6 +335,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Branco', 'Prata', 'Preto', 'Vermelho'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -292,6 +346,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Prata', 'Verde', 'Preto', 'Vermelho'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -301,6 +357,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Prata', 'Verde', 'Preto', 'Vermelho'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -310,6 +368,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $this->setReference($model->getName() . '-model', $model);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Prata'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
 //        $model = new Model();
@@ -346,6 +406,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $this->setReference($model->getName() . '-model', $model);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Prata', 'Branco', 'Preto Eclipse', 'Preto Safira', 'Cinza Chumbo'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -355,6 +417,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Prata', 'Amarelo', 'Azul', 'Preto', 'Vermelho'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -364,6 +428,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Prata', 'Azul', 'Preto', 'Vermelho'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -373,6 +439,8 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Prata', 'Azul', 'Preto', 'Vermelho'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
         
         $model = new Model();
@@ -382,14 +450,15 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
         $model->setPrice(30000);
         $model->setMotorization('2.0 8V');
         $this->addModelColors($model, array('Prata', 'Azul', 'Preto', 'Vermelho'));
+        $this->addKits($model);
+        $this->addAcessories($model);
         $manager->persist($model);
-        
         
         $manager->flush();
     }
     
     public function addModelColors(Model $model, $colors){
-        $mainImage = false;;
+        $mainImage = false;
         foreach ($colors as $color) {
             $modelColor = new ModelColor();
             $modelColor->setColor($this->getReference($color . '-color'));
@@ -406,11 +475,29 @@ class LoadModelData extends AbstractFixture implements ContainerAwareInterface, 
     }
     
     public function addKits(Model $model, $kits = null){
-        
+        if(!$kits){
+            $model->addKit($this->getReference('Kit 1-kit'));
+            $model->addKit($this->getReference('Kit 2-kit'));
+            $model->addKit($this->getReference('Kit 3-kit'));
+            $model->addKit($this->getReference('Kit 4-kit'));
+        }
+        else {
+            
+        }
     }
     
     public function addAcessories(Model $model, $acessories = null){
-        
+        if(!$acessories){
+            $model->addAcessory($this->getReference('Acessorio 1-acessory'));
+            $model->addAcessory($this->getReference('Acessorio 2-acessory'));
+            $model->addAcessory($this->getReference('Acessorio 3-acessory'));
+            $model->addAcessory($this->getReference('Acessorio 4-acessory'));
+            $model->addAcessory($this->getReference('Acessorio 5-acessory'));
+            $model->addAcessory($this->getReference('Acessorio 6-acessory'));
+        }
+        else {
+            
+        }
     }
     
     
